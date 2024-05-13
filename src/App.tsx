@@ -13,33 +13,35 @@ import { Product } from "./types"
 import api from "./api"
 
 import "./App.css"
+import { useState } from "react"
 
 function App() {
+ 
   const getProducts = async () => {
     try {
-      const res = await api.get("/products")
+      const res = await api.get("/Product")
       return res.data
     } catch (error) {
       console.error(error)
       return Promise.reject(new Error("Something went wrong"))
     }
   }
-
   // Queries
   const { data, error } = useQuery<Product[]>({
     queryKey: ["products"],
     queryFn: getProducts
   })
-
+  
   return (
     <div className="App">
-      <h1 className="text-2xl uppercase mb-10">Products</h1>
-
+      <h1 className="text-2xl uppercase mb-10">DISCOVER THE WORLD</h1>
       <section className="flex flex-col md:flex-row gap-4 justify-between max-w-6xl mx-auto">
         {data?.map((product) => (
           <Card key={product.id} className="w-[350px]">
             <CardHeader>
               <CardTitle>{product.name}</CardTitle>
+              {product.price}
+              {product.image}
               <CardDescription>Some Description here</CardDescription>
             </CardHeader>
             <CardContent>

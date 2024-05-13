@@ -1,6 +1,16 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; 
+body{
+background-image: url(/images/photorealistic-style-clouds.jpg);
+background-size:cover; /* Adjusts the size of the background image to cover the entire container */
+    background-position: center;  
+     background-repeat: no-repeat;
+}
+h1{
+color: rgb(26, 26, 66);
+font-family:fantasy;
+}
 
 @layer base {
   :root {

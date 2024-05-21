@@ -6,34 +6,34 @@ Tech Stack: React, TypeScript. Styling: Tailwind, MUI, or CSS/SASS
 
 **Pages to Create:**
 
-1. Home page (list all the products)
-2. Product page (contain the details of a product)
-3. Dashboard page
+1. Home page (list all the products)>
+2. Product page (contain the details of a product)>
+3. Dashboard page>
 
 **Functionalities for a Visitor:**
 
-- Get list of products
-- Filter products by categories or price
-- Search products by name
-- Add products to a cart
-- Remove products from a cart
+- Get list of products>
+- Filter products by categories or price.xx
+- Search products by name.x
+- Add products to a cart >
+- Remove products from a cart>
 
 **Functionalities for an Admin:**
 
-- Add a new product, update info of a product, remove a product
+- Add a new product, update info of a product, remove a product>
 
 ### Level 2: Additional Requirements
 
 **Authentication:**
 
-- Implement register and login functionality via email and password
-- Protect the routes based on login and admin status
+- Implement register and login functionality via email and password>
+- Protect the routes based on login and admin status.x nnnoowww
 
 **Functionalities for an Admin:**
 
-- list all users, delete or block a user.
-- list all orders
-- Add a new category, update info of a category, remove a category
+- list all users, delete or block a user.x
+- list all orders.x
+- Add a new category, update info of a category, remove a category.xx
 
 **Form Validation:**
 

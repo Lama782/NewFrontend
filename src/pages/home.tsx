@@ -25,6 +25,7 @@ export function Home() {
     const context = useContext(GlobalContext);
     if (!context) throw Error("context is missing")
     const { handleAddtoCart } = context
+
     const getProducts = async () => {
         try {
             const res = await api.get("/Product")
@@ -59,7 +60,7 @@ export function Home() {
                                     objectFit: "cover"
                                 }}
                                 width="400" />
-                                 <CardTitle>{product.Description}</CardTitle>
+                                 <CardTitle>{product.description}</CardTitle>
                             <CardDescription>Some Description here</CardDescription>
                         </CardHeader>
                         <CardContent>

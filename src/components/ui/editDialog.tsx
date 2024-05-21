@@ -10,32 +10,40 @@ import { useQueryClient } from "@tanstack/react-query"
 import { ChangeEvent, useState } from "react"
 
 
-export function EditDialog({product}:{product:Product}) {
+export function EditDialog({ product }: { product: Product }) {
   const queryClient = useQueryClient()
-  const[updatedProduct,setUpdateProduct]=useState(product)
+  const [updatedProduct, setUpdateProduct] = useState(product)
 
   const updateProduct = async () => {
     try {
-      const res = await api.patch(`/Product/${updatedProduct.name}`,updatedProduct);
+      const res = await api.patch(`/Product/${product.name}`, updatedProduct);
       return res.data;
     } catch (error) {
       console.error(error);
       return Promise.reject(new Error("Something went wrong"));
     }
   };
-console.log('updatedProduct',updatedProduct)
+  console.log('updatedProduct', updatedProduct)
 
-  const handleChange=(e:ChangeEvent<HTMLInputElement>)=>{
-    const {value}=e.target
-   
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target
+
     setUpdateProduct({
       ...updatedProduct,
-      name:value
+      name: value
     })
   }
-  const handleUpdate= async()=>{
-await updateProduct()
-queryClient.invalidateQueries({ queryKey: ["products"] })
+  const handleUpdate = async () => {
+    // await updateProduct()
+    // queryClient.invalidateQueries({ queryKey: ["products"] })
+    try {
+      const updatedData = await updateProduct();
+      setUpdateProduct(updatedData);
+      queryClient.invalidateQueries({ queryKey: ["products"] });
+     
+    } catch (error) {
+      console.error(error);
+    }
   }
   return (
     <Dialog>
@@ -44,10 +52,10 @@ queryClient.invalidateQueries({ queryKey: ["products"] })
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         {/* <DialogHeader> */}
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>
-           
-          </DialogDescription>
+        <DialogTitle>Edit profile</DialogTitle>
+        <DialogDescription>
+
+        </DialogDescription>
         {/* </DialogHeader> */}
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
@@ -61,10 +69,10 @@ queryClient.invalidateQueries({ queryKey: ["products"] })
               onChange={handleChange}
             />
           </div>
-          
+
         </div>
         {/* <DialogFooter> */}
-          <Button type="submit"onClick={handleUpdate}>Save changes</Button>
+        <Button type="submit" onClick={handleUpdate}>Save changes</Button>
         {/* </DialogFooter> */}
       </DialogContent>
     </Dialog>

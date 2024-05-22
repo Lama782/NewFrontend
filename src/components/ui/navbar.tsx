@@ -11,7 +11,7 @@ export function NavBar() {
   if (!context) throw Error("context is missing")
   const { state } = context
 
-  console.log("the state ", state)
+  // console.log("the state ", state)
 
   return (
     <div className="bg-gray-100/80 backdrop-blur-sm text-gray-800 py-4 px-6 flex justify-between items-center dark:bg-gray-800/80 dark:text-gray-200 mb-20">

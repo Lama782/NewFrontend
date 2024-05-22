@@ -37,7 +37,6 @@ type GlobalContextType = {
   handleAddtoCart: (product: Product) => void
   handleDeleteFromCart: (id: string) => void
   handleStoreUser: (user: DecodedUser) => void
-
 }
 type GlobalState = {
   cart: Product[]
@@ -47,6 +46,7 @@ type GlobalState = {
 export const GlobalContext = createContext<GlobalContextType | null>(null)
 
 function App() {
+  
   const [state, setState] = useState<GlobalState>({
     cart: [],
     user: null
@@ -62,8 +62,6 @@ function App() {
       })
     }
   }, [])
-
-
   const handleAddtoCart = (product: Product) => {
     // const isDuplicate = state.cart.find((cartItem) => cartItem.id === product.id)
     // if (isDuplicate) return
@@ -73,10 +71,13 @@ function App() {
     })
   }
   const handleDeleteFromCart = (id: string) => {
-    const filteredCart = state.cart.filter(item => item.id !== id)
+    const cart = state.cart
+    const index = state.cart.findIndex(item => item.id === id)
+    cart.splice(index, 1)
+    // console.log('cart:', cart)
     setState({
       ...state,
-      cart: filteredCart
+      cart: cart
     })
   }
   const handleStoreUser = (user: DecodedUser) => {
@@ -84,9 +85,7 @@ function App() {
       ...state,
       user
     })
-
   }
-
   return (
     <div>
       <GlobalContext.Provider
@@ -94,6 +93,7 @@ function App() {
         <RouterProvider router={router} />
       </GlobalContext.Provider>
     </div>
+    
   )
 }
 export default App

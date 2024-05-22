@@ -165,7 +165,6 @@ export function Dashboard() {
                                         <TableCell className="text-left">{product.description}</TableCell>
                                         <TableCell className="text-left">{product.price}</TableCell>
                                         <TableCell className="text-left">{product.image}</TableCell>
-
                                         <TableCell>
 
                                             <TableCell >

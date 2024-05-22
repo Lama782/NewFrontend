@@ -14,7 +14,7 @@ Tech Stack: React, TypeScript. Styling: Tailwind, MUI, or CSS/SASS
 
 - Get list of products>
 - Filter products by categories or price.xx
-- Search products by name.x
+- Search products by name.>
 - Add products to a cart >
 - Remove products from a cart>
 
@@ -27,7 +27,7 @@ Tech Stack: React, TypeScript. Styling: Tailwind, MUI, or CSS/SASS
 **Authentication:**
 
 - Implement register and login functionality via email and password>
-- Protect the routes based on login and admin status.x nnnoowww
+- Protect the routes based on login and admin status.>
 
 **Functionalities for an Admin:**
 

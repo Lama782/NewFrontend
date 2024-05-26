@@ -8,7 +8,6 @@ import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, Tabl
 import { Product, User } from "@/types"
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 import {  useState } from "react"
-// import { useNavigate } from "react-router-dom"
 
 export function Dashboard() {
     const queryClient = useQueryClient()
@@ -40,6 +39,20 @@ export function Dashboard() {
         await deleteProduct(name);
         queryClient.invalidateQueries({ queryKey: ["products"] });
     };
+    const deleteUser = async (name: string) => {
+        try {
+          const res = await api.delete(`/User/${name}`)
+          return res.data
+        } catch (error) {
+          console.error(error)
+          return Promise.reject(new Error("Something went wrong"))
+        }
+      }
+      const handleDeleteUser = async (name: string) => {
+        console.log(name)
+        await deleteUser(name)
+        queryClient.invalidateQueries({ queryKey: ["users"] })
+      }
     const postProduct = async () => {
         try {
             const res = await api.post("/Product", product)
@@ -63,7 +76,6 @@ export function Dashboard() {
             return Promise.reject(new Error("Something went wrong"))
         }
     }
-
     const handleSubmit = async (e: any) => {
         e.preventDefault()
         await postProduct()
@@ -90,20 +102,17 @@ export function Dashboard() {
     const { data: users, error: userError } = useQuery<User[]>({
         queryKey: ["users"],
         queryFn: getUsers
-
     })
     return (
         <>
             <NavBar />
             <div>
                 <form className="mt-20 w-1/3 mx-auto" onSubmit={handleSubmit}>
-
                     <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Add new product</h3>
                     <Input name="name" className="mt-4" type="text" placeholder="Name" onChange={handleChange} />
                     <Input name="description" className="mt-4" type="text" placeholder="Description" onChange={handleChange} />
                     <Input name="price" className="mt-4" type="number" placeholder="Price" onChange={handleChange} />
                     <Input name="image" className="mt-4" type="text" placeholder="Image" onChange={handleChange} />
-
                     <div className="flex justify-between">
                         <Button variant="outline" className="mt-4" type="reset" >
                             Reset
@@ -126,35 +135,6 @@ export function Dashboard() {
                                 <TableHead className="special-text">Action</TableHead>
                             </TableRow>
                         </TableHeader>
-                        {/* <TableBody>
-                            {products?.map((product) => {
-                                return (
-                                    <TableRow key={product.id}>
-                                        <TableCell ></TableCell>
-                                        <TableCell >{product.name}</TableCell>
-                                        <TableCell >{product.description}</TableCell>
-                                        <TableCell >{product.price}</TableCell>
-                                        <TableCell >{product.image}</TableCell>
-
-                                        <TableCell >
-                                            <Button
-                                                variant="destructive"
-                                                onClick={() => handleDeleteProduct(product.name)}
-                                            >
-                                                X
-                                            </Button>
-                                            <TableCell >
-                                                <EditDialog product={product} />
-                                            </TableCell>
-                                        </TableCell>
-
-
-                                    </TableRow>
-
-                                )
-                            })}
-                        </TableBody> */}
-
                         <TableBody>
                             {products?.map((product) => {
                                 console.log(product) // Log each product to inspect its structure
@@ -166,28 +146,60 @@ export function Dashboard() {
                                         <TableCell className="text-left">{product.price}</TableCell>
                                         <TableCell className="text-left">{product.image}</TableCell>
                                         <TableCell>
-
                                             <TableCell >
                                                 <Button
                                                     variant="destructive"
                                                     onClick={() => handleDeleteProduct(product.name)}
-                                                >
-                                                    X
+                                                >X
                                                 </Button>
                                                 <TableCell >
                                                     <EditDialog product={product} />
                                                 </TableCell>
                                             </TableCell>
-
                                         </TableCell>
                                     </TableRow>
                                 )
                             })}
                         </TableBody>
-
                     </Table>
+                    <div>
+          <h1 className="scroll-m-20 text-4xl my-10 font-semibold tracking-tight">Users</h1>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Name</TableHead>
+                <TableHead className="text-right">Email</TableHead>
+                <TableHead>Role</TableHead>
+
+                <TableHead className="text-right">Delete</TableHead>
+                <TableHead className="text-right"></TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {users?.map((user) => (
+                <TableRow key={user.name}>
+                  <TableCell className="text-left">{user.name}</TableCell>
+                  <TableCell className="text-left">{user.email}</TableCell>
+                  <TableCell className="text-left">{user.role}</TableCell>
+
+                  <TableCell className="text-right">
+                    <Button variant="destructive" onClick={() => handleDeleteUser(user.email)}>
+                      X
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+
+
+
+
+
+                    </div>
                 </div>
-            </div>
+           
         </>
     )
 }

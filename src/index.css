@@ -7,12 +7,24 @@ background-size:cover;
     background-position: center;  
      background-repeat: no-repeat;
 } */
-h1{
+/* h1{
+  font-size:xx-large;
 color: rgb(26, 26, 66);
-font-family:fantasy;
-}
-card{
+font-family:Georgia, 'Times New Roman', Times, serif;
+} */
+/* card{
   filter:blur(4px);
+
+
+
+} */
+
+
+
+@layer components {
+  .button-custom {
+    @apply bg-custom-button-bg text-custom-button-text py-custom-padding-y px-custom-padding-x border-none rounded-custom-radius cursor-pointer text-center my-custom-margin;
+  }
 }
 @layer base {
   :root {
@@ -85,4 +97,5 @@ card{
   body {
     @apply bg-background text-foreground;
   }
+
 }

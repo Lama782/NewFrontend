@@ -13,7 +13,7 @@ Tech Stack: React, TypeScript. Styling: Tailwind, MUI, or CSS/SASS
 **Functionalities for a Visitor:**
 
 - Get list of products>
-- Filter products by categories or price.xx
+- Filter products by categories or price.xxx
 - Search products by name.>
 - Add products to a cart >
 - Remove products from a cart>
@@ -31,9 +31,9 @@ Tech Stack: React, TypeScript. Styling: Tailwind, MUI, or CSS/SASS
 
 **Functionalities for an Admin:**
 
-- list all users, delete or block a user.x
+- list all users, delete or block a user.>
 - list all orders.x
-- Add a new category, update info of a category, remove a category.xx
+- Add a new category, update info of a category, remove a category.xxXXX
 
 **Form Validation:**
 

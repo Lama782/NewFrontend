@@ -8,6 +8,7 @@ import { reshapeUser } from "@/lib/utils"
 export function PrivateRout({ children }: {children: ReactElement}){
     console.log("GLOBAL DATA")
     const token = localStorage.getItem("token") || ""
+    if (!token) return <Navigate to="/" />
     const decodedToken = jwt(token)
     
     const decodedUser = reshapeUser(decodedToken)

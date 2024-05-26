@@ -1,93 +1,298 @@
-html,
+
+
 body {
-  padding: 0;
-  margin: 0;
-  height: 200vh;
-  background: #000;
+  font-family: Arial, sans-serif;
 }
 
-.headline {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  font-size: 10vw;
+.hero-section {
+  position: relative;
+  height: calc(100vh - 80px);
+  overflow: hidden;
 }
 
-.inset {
+.hero-section::before,
+.hero-section::after,
+.hero-section .third-slide {
+  content: '';
   position: absolute;
-  inset: 0;
-}
-.white {
-  color: white;
-}
-.gray {
-  color: #446;
-}
-
-.full {
-  height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fade 12s infinite;
+  transition: opacity 1s ease-in-out;
 }
 
-.center {
+.hero-section::before {
+  background-image: url('https://i0.wp.com/nearfarmag.com/wp-content/uploads/2023/03/elephant-rock-alula.jpg?w=1000&quality=89&ssl=1');
+  animation-delay: 0s;
+}
+
+.hero-section::after {
+  background-image: url('https://s7g10.scene7.com/is/image/rcu/summer-hero-01?$Responsive$&fit=stretch&fmt=webp&wid=1920');
+  animation-delay: 4s;
+}
+
+.hero-section .third-slide {
+  background-image: url('https://cloudfront-eu-central-1.images.arcpublishing.com/thenational/6WMTMMGRMVGF7C5JKRVMZ7QUIQ.jpg');
+  animation-delay: 8s;
+}
+
+@keyframes fade {
+  0%, 33.33%, 100% { opacity: 0; }
+  16.67%, 50% { opacity: 1; }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* Ensure overlay is on top      #e2cba466 */
+}
+
+/* .second-section {
   display: flex;
   align-items: center;
+  padding: 100px ;
+  background-color: #fbc58a59 ;
+}
+
+.second-section img {
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.second-section .text-content {
+  flex: 2;
+  padding-left: 40px;
+} */
+.second-section {
+  display: flex;
+  align-items: center;
+  padding: 100px;
+  background-color: #fbc58a59;
+}
+
+.second-section img {
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+  border-radius: 5px;
+  order: 2; /* Ensure the image comes second in the flex order */
+}
+
+.second-section .text-content {
+  flex: 1;
+  padding-right: 40px; /* Adjust padding as needed */
+  order: 1; /* Ensure the text comes first in the flex order */
+}
+/* .Third-section {
+  display: flex;
+  align-items: center;
+  padding: 100px;
+  background-color: #d0dbc3;
+}
+
+.Third-section img {
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.Third-section .text-content3 {
+  flex: 1;
+  padding-right: 40px; 
+  order: -1; 
+  text-align: right;
+} */
+.moreInfo{
+  background-color: #d0dbc3;
+
+}
+
+.search-section {
+  padding: 20px;
+  background-color: #fff; 
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #003d32; 
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.products-section {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-.gradient {
-  background: linear-gradient(rgba(14, 62, 151, 0.5) 50%, black);
+.product-card {
+  width: 300px;
+  padding: 20px;
+  margin: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  font-weight: bold;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-card .card-header {
+  padding: 20px;
+}
+
+.product-card .card-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.product-card .card-description {
+  font-size: 16px;
+  color: #666;
+}
+
+.product-card .card-footer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 
+.details-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 80px);
+  padding: 40px;
+  background-color: #f9f9f9;
+}
 
+.details-container {
+  display: flex;
+  align-items: flex-start;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  width: 100%;
+}
 
+.details-page img {
+  max-width: 50%;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.details-content {
+  max-width: 50%;
+}
 
+.details-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #004d40;
+}
+/* h1{
+  color: #004d40;
 
+} */
 
+.details-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
 
+.details-content .card-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
 
+.details-content .price {
+  font-size: 1.5rem;
+  color: #004d40;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
 
-
-
-#root {
-  max-width: 1880px;
-  margin: 0 auto;
-  padding: 2rem;
+.details-content .button {
+  background-color: #004d40;
+  color: #fff;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
   text-align: center;
+  margin: 10px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.details-content .button:hover {
+  background-color: #003d32;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Styling for headings */
+.details-title {
+  font-size: 2.5rem;
+  color: rgb(122 76 53);
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.product-name {
+  font-size: 2.5rem;
+  color: #004d40;
+  margin-bottom: 20px;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* Footer styles */
+footer {
+  background-color: #004d40;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }

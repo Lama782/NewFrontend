@@ -4,18 +4,30 @@ import { Cart } from "./cart";
 import { useContext } from "react";
 import { GlobalContext } from "@/App";
 import { ROLE } from "@/types";
+import { Button } from "./button";
+
 
 export function NavBar() {
 
   const context = useContext(GlobalContext);
   if (!context) throw Error("context is missing")
-  const { state } = context
+  const { state,handleRemoveUser } = context
 
   // console.log("the state ", state)
 
+  const handleLogout = () => {
+    if (typeof window !== undefined) {
+      window.location.reload()
+    }
+
+    localStorage.removeItem("token")
+    localStorage.removeItem("user")
+
+    handleRemoveUser()
+  }
   return (
-    <div className="bg-gray-100/80 backdrop-blur-sm text-gray-800 py-4 px-6 flex justify-between items-center dark:bg-gray-800/80 dark:text-gray-200 mb-20">
-      <h3>LOGO</h3>
+    <div className="bg-gray-100/80 backdrop-blur-sm text-gray-800 py-4 px-6 flex justify-between items-center dark:bg-gray-800/80 dark:text-gray-200 mb-3">
+      <img src=".../images/logo" />
       <NavigationMenu >
         <NavigationMenuList className="flex gap-4">
           <NavigationMenuItem className="flex space-x-4">
@@ -50,6 +62,10 @@ export function NavBar() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
+        )}
+        {state.user && (
+        
+               <Link  onClick={handleLogout} to={"/"}> Logout</Link>
         )}
         </NavigationMenuList>
       </NavigationMenu>

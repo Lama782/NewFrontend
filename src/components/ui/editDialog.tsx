@@ -3,11 +3,12 @@ import { Button } from "@/components/ui/button"
 
 import { Input } from "@/components/ui/input"
 import { Product } from "@/types"
-import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription, } from "@radix-ui/react-dialog"
+// import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription, } from "@radix-ui/react-dialog"
 
 import { Label } from "@radix-ui/react-label"
 import { useQueryClient } from "@tanstack/react-query"
 import { ChangeEvent, useState } from "react"
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "./dialog"
 
 
 export function EditDialog({ product }: { product: Product }) {
@@ -48,15 +49,15 @@ export function EditDialog({ product }: { product: Product }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Edit Product</Button>
+        <Button variant="outline">Edit Profile</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
-        {/* <DialogHeader> */}
-        <DialogTitle>Edit profile</DialogTitle>
-        <DialogDescription>
-
-        </DialogDescription>
-        {/* </DialogHeader> */}
+        <DialogHeader>
+          <DialogTitle>Edit profile</DialogTitle>
+          <DialogDescription>
+           
+          </DialogDescription>
+        </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="name" className="text-right">
@@ -68,12 +69,22 @@ export function EditDialog({ product }: { product: Product }) {
               className="col-span-3"
               onChange={handleChange}
             />
+             <Label htmlFor="name" className="text-right">
+             description
+            </Label>
+            <Input
+              id="description"
+              defaultValue={updatedProduct.description}
+              className="col-span-3"
+              onChange={handleChange}
+            />
           </div>
-
         </div>
-        {/* <DialogFooter> */}
-        <Button type="submit" onClick={handleUpdate}>Save changes</Button>
-        {/* </DialogFooter> */}
+        <DialogFooter>
+          <Button type="submit" onClick={handleUpdate}>
+            Save changes
+          </Button>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   )

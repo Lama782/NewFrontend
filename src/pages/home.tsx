@@ -3,27 +3,14 @@ import { Product } from "../types";
 import api from "../api";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Button } from "../components/ui/button";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle
-} from "../components/ui/card";
 import { GlobalContext } from "@/App";
 import { NavBar } from "@/components/ui/navbar";
 import { Link, useSearchParams } from "react-router-dom";
-import { Input } from "@/components/ui/input";
 import "../App.css"; // Import the CSS file
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Footer from "@/components/ui/footer";
-
-
-
-
 export function Home() {
     const [searchParams, setSearchParams] = useSearchParams();
     const defaultSearch = searchParams.get("searchBy") || "";
@@ -78,7 +65,7 @@ export function Home() {
                     <br />
                     <br />
                     <p className="font-sans text-xl text-textColor">
-                        Discover the hidden gems and breathtaking landscapes of AlUla. From the majestic Elephant Rock to the historic ruins of ancient civilizations, AlUla offers a unique blend of natural beauty and cultural heritage. Nestled in the heart of the Arabian Peninsula, AlUla is home to some of the most stunning and diverse landscapes in the world. Visitors can marvel at dramatic sandstone mountains, vast desert expanses, and lush oases. AlUla's rich history is evident in the ancient city of Hegra, Saudi Arabia's first UNESCO World Heritage Site.
+                        Discover the hidden gems and breathtaking landscapes of AlUla. From the majestic Elephant Rock to the historic ruins of ancient civilizations, AlUla offers a unique blend of natural beauty and cultural heritage. Nestled in the heart of the Arabian Peninsula, AlUla is home to some of the most stunning and diverse landscapes in the world. Visitors can marvel at dramatic sandstone mountains, vast desert expanses, and lush oases. AlUlas rich history is evident in the ancient city of Hegra, Saudi Arabias first UNESCO World Heritage Site.
                     </p>
                     <br />
                     <br />

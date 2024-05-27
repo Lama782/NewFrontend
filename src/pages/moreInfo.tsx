@@ -9,11 +9,10 @@ import { Input } from "@/components/ui/input";
 import { NavBar } from "@/components/ui/navbar";
 import { Product } from "@/types";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { SearchIcon } from "lucide-react";
 import { ChangeEvent, FormEvent, useContext, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
-export function MoreInfo(){
+export function MoreInfo() {
     const [searchParams, setSearchParams] = useSearchParams();
     const defaultSearch = searchParams.get("searchBy") || "";
 
@@ -22,7 +21,7 @@ export function MoreInfo(){
     const context = useContext(GlobalContext);
     if (!context) throw Error("context is missing");
     const { handleAddtoCart } = context;
-   
+
     const getProducts = async () => {
         try {
             const res = await api.get(`/Product?Search=${searchBy}`);
@@ -41,7 +40,7 @@ export function MoreInfo(){
         const { value } = e.target;
         setSearchBy(value);
     };
-    
+
     const handleSearch = (e: FormEvent) => {
         e.preventDefault();
         queryClient.invalidateQueries({ queryKey: ["products"] });
@@ -51,39 +50,26 @@ export function MoreInfo(){
         });
     };
 
-    return(
-        // <h1>MoreInfo</h1>
+    return (
         <div>
-             <NavBar/>
-             
-             {/* <div className="search-section">
-                <form onSubmit={handleSearch} className="search-form ">
-                    <Input
-                        type="search"
-                        placeholder="Search for a Product"
-                        onChange={handleChange}
-                        value={searchBy}
-                    />
-                    <Button type="submit">Search</Button>
-                </form>
-            </div> */}
+            <NavBar />
             <div className="moreInfo">
-<div className="search-section flex justify-center my-6">
-                <form onSubmit={handleSearch} className="search-form flex items-center space-x-2">
-                    <Input
-                        type="search"
-                        placeholder="Search for a Product"
-                        onChange={handleChange}
-                        value={searchBy}
-                        className="px-6 py-1 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
-                    />
-                    <Button type="submit" className="px-3 py-1 bg-customColor text-white rounded-md shadow-sm hover:bg-headerColor focus:outline-none focus:ring-2 focus:ring-blue-300">
-                        Search
-                    </Button>
-                </form>
-            </div></div>
+                <div className="search-section flex justify-center my-6">
+                    <form onSubmit={handleSearch} className="search-form flex items-center space-x-2">
+                        <Input
+                            type="search"
+                            placeholder="Search for a Product"
+                            onChange={handleChange}
+                            value={searchBy}
+                            className="px-6 py-1 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+                        />
+                        <Button type="submit" className="px-3 py-1 bg-customColor text-white rounded-md shadow-sm hover:bg-headerColor focus:outline-none focus:ring-2 focus:ring-blue-300">
+                            Search
+                        </Button>
+                    </form>
+                </div></div>
             <h1 className="details-title pl-40 font-bold">Places to go and Things to do in AlUla</h1>
- <div className="products-section">
+            <div className="products-section">
 
                 {data?.length === 0 && <p>No products found</p>}
                 {data?.map((product) => (
@@ -103,18 +89,13 @@ export function MoreInfo(){
                             </Button>
                         </CardFooter>
                     </Card>
-                    
+
                 ))}
                 {error && <p className="text-red-500">{error.message}</p>}
             </div>
-            <br/>
-            <br/>
-
-<Footer/>
-
-
+            <br />
+            <br />
+            <Footer />
         </div>
-        
     )
-    
 }

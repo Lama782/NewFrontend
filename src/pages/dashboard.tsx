@@ -7,7 +7,7 @@ import { NavBar } from "@/components/ui/navbar"
 import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Product, User } from "@/types"
 import { useQuery, useQueryClient } from "@tanstack/react-query"
-import {  useState } from "react"
+import { ChangeEvent, FormEvent, useState } from "react"
 
 export function Dashboard() {
     const queryClient = useQueryClient()
@@ -18,7 +18,7 @@ export function Dashboard() {
         price: 0,
         image: "",
     })
-    const handleChange = (e) => {
+    const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
         const { name, value, valueAsNumber } = e.target
         console.log("{name,value}", { name, value })
         setProduct({
@@ -41,18 +41,18 @@ export function Dashboard() {
     };
     const deleteUser = async (name: string) => {
         try {
-          const res = await api.delete(`/User/${name}`)
-          return res.data
+            const res = await api.delete(`/User/${name}`)
+            return res.data
         } catch (error) {
-          console.error(error)
-          return Promise.reject(new Error("Something went wrong"))
+            console.error(error)
+            return Promise.reject(new Error("Something went wrong"))
         }
-      }
-      const handleDeleteUser = async (name: string) => {
+    }
+    const handleDeleteUser = async (name: string) => {
         console.log(name)
         await deleteUser(name)
         queryClient.invalidateQueries({ queryKey: ["users"] })
-      }
+    }
     const postProduct = async () => {
         try {
             const res = await api.post("/Product", product)
@@ -76,7 +76,7 @@ export function Dashboard() {
             return Promise.reject(new Error("Something went wrong"))
         }
     }
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault()
         await postProduct()
         queryClient.invalidateQueries({ queryKey: ["products"] })
@@ -163,43 +163,38 @@ export function Dashboard() {
                         </TableBody>
                     </Table>
                     <div>
-          <h1 className="text-3xl font-bold text-emerald-950 font-mono text-headerColor mb-9 mt-11 ml-11">Users</h1>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="font-bold">Name</TableHead>
-                <TableHead className="text-left font-bold">Email</TableHead>
-                <TableHead className="font-bold">Role</TableHead>
+                        <h1 className="text-3xl font-bold text-emerald-950 font-mono text-headerColor mb-9 mt-11 ml-11">Users</h1>
+                        <Table>
+                            <TableHeader>
+                                <TableRow>
+                                    <TableHead className="font-bold">Name</TableHead>
+                                    <TableHead className="text-left font-bold">Email</TableHead>
+                                    <TableHead className="font-bold">Role</TableHead>
 
-                <TableHead className="text-right font-bold">Delete</TableHead>
-                <TableHead className="text-right"></TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {users?.map((user) => (
-                <TableRow key={user.name}>
-                  <TableCell className="text-left font-bold text-textColor">{user.name}</TableCell>
-                  <TableCell className="text-left font-bold text-textColor">{user.email}</TableCell>
-                  <TableCell className="text-left font-bold text-textColor ">{user.role}</TableCell>
+                                    <TableHead className="text-right font-bold">Delete</TableHead>
+                                    <TableHead className="text-right"></TableHead>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                                {users?.map((user) => (
+                                    <TableRow key={user.name}>
+                                        <TableCell className="text-left font-bold text-textColor">{user.name}</TableCell>
+                                        <TableCell className="text-left font-bold text-textColor">{user.email}</TableCell>
+                                        <TableCell className="text-left font-bold text-textColor ">{user.role}</TableCell>
 
-                  <TableCell className="text-right">
-                    <Button className="bg-customColor" onClick={() => handleDeleteUser(user.email)}>
-                      X
-                    </Button>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </div>
-
-
-
-
-
+                                        <TableCell className="text-right">
+                                            <Button className="bg-customColor" onClick={() => handleDeleteUser(user.email)}>
+                                                X
+                                            </Button>
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
                     </div>
                 </div>
-           
+            </div>
+
         </>
     )
 }

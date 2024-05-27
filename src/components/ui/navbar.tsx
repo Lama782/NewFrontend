@@ -26,13 +26,13 @@ export function NavBar() {
     handleRemoveUser()
   }
   return (
-    <div className="bg-gray-100/80 backdrop-blur-sm text-gray-800 py-4 px-6 flex justify-between items-center dark:bg-gray-800/80 dark:text-gray-200 mb-3">
-      <img src=".../images/logo" />
+    <div className="bg-gray-100/80 backdrop-blur-sm text-customColor font-bold py-4 px-6 flex justify-between items-center dark:bg-gray-800/80 dark:text-gray-200 mb-3">
+      <img className="w-16 h-16"src="/images/logo.png" />
       <NavigationMenu >
         <NavigationMenuList className="flex gap-4">
           <NavigationMenuItem className="flex space-x-4">
             <Link to="/">
-              <NavigationMenuLink className="hover:text-gray-500 dark:hover:text-gray-400 block">
+              <NavigationMenuLink className="hover:text-headerColor dark:hover:text-gray-400 block">
                 Home
               </NavigationMenuLink>
             </Link>
@@ -40,7 +40,7 @@ export function NavBar() {
           {state.user?.role === ROLE.Admin && (
           <NavigationMenuItem className="flex">
             <Link to="/dashboard">
-              <NavigationMenuLink className="hover:text-gray-500 dark:hover:text-gray-400 block">
+              <NavigationMenuLink className="hover:text-headerColor dark:hover:text-gray-400 block">
                 Dashboard
               </NavigationMenuLink>
             </Link>
@@ -48,7 +48,7 @@ export function NavBar() {
           {!state.user &&(
           <NavigationMenuItem className="flex">
             <Link to="/signup">
-              <NavigationMenuLink className="hover:text-gray-500 dark:hover:text-gray-400 block">
+              <NavigationMenuLink className="hover:text-headerColor dark:hover:text-gray-400 block">
                 Signup
               </NavigationMenuLink>
             </Link>
@@ -57,7 +57,7 @@ export function NavBar() {
           {!state.user && (
           <NavigationMenuItem className="flex">
             <Link to="/login">
-              <NavigationMenuLink className="hover:text-gray-500 dark:hover:text-gray-400 block">
+              <NavigationMenuLink className="hover:text-headerColor dark:hover:text-gray-400 block">
                 Login
               </NavigationMenuLink>
             </Link>
@@ -65,7 +65,7 @@ export function NavBar() {
         )}
         {state.user && (
         
-               <Link  onClick={handleLogout} to={"/"}> Logout</Link>
+               <Link className="hover:text-headerColor" onClick={handleLogout} to={"/"}> Logout</Link>
         )}
         </NavigationMenuList>
       </NavigationMenu>

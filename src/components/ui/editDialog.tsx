@@ -49,11 +49,11 @@ export function EditDialog({ product }: { product: Product }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Edit Profile</Button>
+        <Button variant="outline">Edit</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
+          <DialogTitle className="text-customColor">Edit</DialogTitle>
           <DialogDescription>
            
           </DialogDescription>

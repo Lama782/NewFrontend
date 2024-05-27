@@ -108,7 +108,7 @@ export function Dashboard() {
             <NavBar />
             <div>
                 <form className="mt-20 w-1/3 mx-auto" onSubmit={handleSubmit}>
-                    <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Add new product</h3>
+                    <h3 className="text-3xl font-bold text-emerald-950 font-mono text-headerColor mb-9  justify-center">Add new product</h3>
                     <Input name="name" className="mt-4" type="text" placeholder="Name" onChange={handleChange} />
                     <Input name="description" className="mt-4" type="text" placeholder="Description" onChange={handleChange} />
                     <Input name="price" className="mt-4" type="number" placeholder="Price" onChange={handleChange} />
@@ -117,22 +117,22 @@ export function Dashboard() {
                         <Button variant="outline" className="mt-4" type="reset" >
                             Reset
                         </Button>
-                        <Button className="mt-4" type="submit" >
+                        <Button className="mt-4 bg-customColor" type="submit" >
                             Submit
                         </Button>
                     </div>
                 </form>
                 <div>
-                    <h1 className="scroll-m-20 text-4x1 my-10  tracking-tight"> Products</h1>
+                    <h1 className="text-3xl font-bold text-emerald-950 font-mono text-headerColor mb-9 mt-11 ml-11"> Products:</h1>
                     <Table>
                         <TableHeader>
                             <TableRow>
                                 <TableHead className="w-[100px]"></TableHead>
-                                <TableHead className="special-text">Name</TableHead>
-                                <TableHead className="special-text">Description</TableHead>
-                                <TableHead className="special-text">Price</TableHead>
-                                <TableHead className="special-text">image</TableHead>
-                                <TableHead className="special-text">Action</TableHead>
+                                <TableHead className="special-text font-bold">Name</TableHead>
+                                <TableHead className="special-text font-bold">Description</TableHead>
+                                <TableHead className="special-text font-bold">Price</TableHead>
+                                <TableHead className="special-text font-bold">image</TableHead>
+                                <TableHead className="special-text font-bold">Action</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
@@ -141,14 +141,14 @@ export function Dashboard() {
                                 return (
                                     <TableRow key={product.id}>
                                         <TableCell></TableCell>
-                                        <TableCell className="text-left">{product.name}</TableCell>
-                                        <TableCell className="text-left">{product.description}</TableCell>
-                                        <TableCell className="text-left">{product.price}</TableCell>
-                                        <TableCell className="text-left">{product.image}</TableCell>
+                                        <TableCell className="text-left font-bold text-textColor">{product.name}</TableCell>
+                                        <TableCell className="text-left font-bold text-textColor">{product.description}</TableCell>
+                                        <TableCell className="text-left font-bold text-textColor">{product.price}</TableCell>
+                                        <TableCell className="text-left font-bold text-textColor">{product.image}</TableCell>
                                         <TableCell>
                                             <TableCell >
                                                 <Button
-                                                    variant="destructive"
+                                                    className="bg-customColor ml-4"
                                                     onClick={() => handleDeleteProduct(product.name)}
                                                 >X
                                                 </Button>
@@ -163,27 +163,27 @@ export function Dashboard() {
                         </TableBody>
                     </Table>
                     <div>
-          <h1 className="scroll-m-20 text-4xl my-10 font-semibold tracking-tight">Users</h1>
+          <h1 className="text-3xl font-bold text-emerald-950 font-mono text-headerColor mb-9 mt-11 ml-11">Users</h1>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Name</TableHead>
-                <TableHead className="text-right">Email</TableHead>
-                <TableHead>Role</TableHead>
+                <TableHead className="font-bold">Name</TableHead>
+                <TableHead className="text-left font-bold">Email</TableHead>
+                <TableHead className="font-bold">Role</TableHead>
 
-                <TableHead className="text-right">Delete</TableHead>
+                <TableHead className="text-right font-bold">Delete</TableHead>
                 <TableHead className="text-right"></TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {users?.map((user) => (
                 <TableRow key={user.name}>
-                  <TableCell className="text-left">{user.name}</TableCell>
-                  <TableCell className="text-left">{user.email}</TableCell>
-                  <TableCell className="text-left">{user.role}</TableCell>
+                  <TableCell className="text-left font-bold text-textColor">{user.name}</TableCell>
+                  <TableCell className="text-left font-bold text-textColor">{user.email}</TableCell>
+                  <TableCell className="text-left font-bold text-textColor ">{user.role}</TableCell>
 
                   <TableCell className="text-right">
-                    <Button variant="destructive" onClick={() => handleDeleteUser(user.email)}>
+                    <Button className="bg-customColor" onClick={() => handleDeleteUser(user.email)}>
                       X
                     </Button>
                   </TableCell>

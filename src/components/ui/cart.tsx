@@ -5,6 +5,7 @@ import { GlobalContext } from "@/App";
 import { SearchIcon, ShoppingCartIcon } from "lucide-react";
 import { Product } from "@/types";
 import api from "@/api";
+import { Link } from "react-router-dom";
 
 type OrderItem = {
   quantity: number;
@@ -63,9 +64,9 @@ export function Cart() {
       <PopoverTrigger asChild>
         <div className="flex gap-1">
           <ShoppingCartIcon
-            className="h-6 w-6 text-gray-800 dark:text-gray-200 transition-transform duration-300 ease-in-out hover:scale-110 hover:text-blue-500 dark:hover:text-blue-400"
+            className="h-6 w-6 text-customColor dark:text-gray-200 transition-transform duration-300 ease-in-out hover:scale-110 hover:text-headerColor dark:hover:text-customColor"
           />
-          <span> ({state.cart.length})</span>
+          <span className="pt-1 font-mono"> {state.cart.length}</span>
         </div>
       </PopoverTrigger>
       <PopoverContent className="w-96">
@@ -92,7 +93,10 @@ export function Cart() {
               );
             })}
             <p>Total: {total}</p>
-            <Button onClick={handleCheckout}>Checkout</Button>
+            <Button className="bg-customColor text-button-foreground py-4 px-5 rounded-md cursor-pointer my-2 font-mono">
+                        <Link to="/Checkout" className="">Checkout</Link>
+                    </Button>
+            {/* <Button onClick={handleCheckout}>Checkout</Button> */}
           </div>
         )}
       </PopoverContent>

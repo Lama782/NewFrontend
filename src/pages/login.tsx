@@ -53,8 +53,11 @@ export function Login() {
         }
     }
     return (
-        <div>
-            <h1>LOGIN </h1>
+        <div className="min-h-screen">
+            <div className="flex justify-center items-center ">
+  <h1 className="text-5xl font-bold text-emerald-950 font-mono text-headerColor">LOGIN</h1>
+</div>
+            {/* <h1 className="text-5xl font-bold text-emerald-950 font-mono text-headerColor">LOGIN </h1> */}
             <form action="post" className="md:w-1/2 w-full mx-auto " onSubmit={handleSubmit}>
                 <Input name="email"
                     className="mt-4"
@@ -68,7 +71,7 @@ export function Login() {
                     onChange={handleChange}
                 />
                 <div className="flex justify-between flex-col">
-                    <Button>Login</Button>
+                    <Button className="bg-customColor text-button-foreground py-4 px-5 rounded-md cursor-pointer my-2">Login</Button>
                     <Link to="/signup">
                         <Button variant="link" className="mt-4">create an account</Button>
                     </Link>

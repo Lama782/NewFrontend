@@ -82,7 +82,7 @@ export function Home() {
                     </p>
                     <br />
                     <br />
-                    <Button className="bg-customColor text-button-foreground py-4 px-5 rounded-md cursor-pointer my-2 font-mono">
+                    <Button className="bg-customColor text-button-foreground py-4 px-5 rounded-md cursor-pointer my-2 ">
                         <Link to="/moreInfo" className="">Explore More</Link>
                     </Button>
                 </div>
@@ -102,14 +102,14 @@ export function Home() {
                     <img className="row-span-2 object-cover w-full h-full p-2" src="https://media.cntraveler.com/photos/642b28a95e21b50e5b47c370/master/pass/Banyan%20Tree%20AlUla%20_LEDE%20%20MND_7247(2).jpg" />
                     <img className=" row-span-2 object-cover w-full h-full p-2" src="https://s7g10.scene7.com/is/image/rcu/banyan-tree-accommodationstack-09?$Responsive$&fit=stretch&fmt=webp&wid=1440" />
                 </div>
-                <div className="flex flex-col h-full justify-center">
-                    <h3 className="text-5xl md:text-5xl font-bold text-headerColor "> World's Largest Living Museum!</h3>
-                    <p className="text-2xl py-6 text-textColor">Take a journey through time in the world's largest living museum.
-AlUla stands with two other great oases in northwest Arabia to create a place of profound history that is continuously evolving. Its strategic position has, throughout millenia, made it a crucial hub for trade, and its distinct geographical features, such as the famed oasis and imposing sandstone mountains, combined with its favourable climate, allowed numerous civilisations to thrive. Those who visit now embark on an authentic journey, travelling back in time, surrounded by wonders and a sense of discovery.</p>
-                   
+                <div className="  flex flex-col h-full justify-center">
+                    <h3 className="text-5xl md:text-5xl   font-bold text-emerald-950 font-mono text-headerColor "> Worlds Largest Living Museum!</h3>
+                    <p className="text-2xl py-6 text-textColor">Take a journey through time in the worlds largest living museum.
+                        AlUla stands with two other great oases in northwest Arabia to create a place of profound history that is continuously evolving. Its strategic position has, throughout millenia, made it a crucial hub for trade, and its distinct geographical features, such as the famed oasis and imposing sandstone mountains, combined with its favourable climate, allowed numerous civilisations to thrive. Those who visit now embark on an authentic journey, travelling back in time, surrounded by wonders and a sense of discovery.</p>
+
                 </div>
             </div>
-            
+
             <Footer />
         </>
 

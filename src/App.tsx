@@ -10,6 +10,7 @@ import { Signup } from "./pages/signup"
 import { PrivateRout } from "./components/ui/privateRout"
 import { MoreInfo } from "./pages/moreInfo"
 import { Contact } from "./pages/contact"
+import Checkout from "./pages/checkout"
 
 const router = createBrowserRouter([{
   path: "/",
@@ -40,6 +41,10 @@ const router = createBrowserRouter([{
 {
   path: "/contact",
   element: <Contact/>
+},
+{
+  path: "/checkout",
+  element: <Checkout/>
 }
 ])
 type GlobalContextType = {

@@ -77,7 +77,7 @@ export function MoreInfo(){
                         value={searchBy}
                         className="px-6 py-1 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
                     />
-                    <Button type="submit" className="px-3 py-1 bg-customColor text-white rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    <Button type="submit" className="px-3 py-1 bg-customColor text-white rounded-md shadow-sm hover:bg-headerColor focus:outline-none focus:ring-2 focus:ring-blue-300">
                         Search
                     </Button>
                 </form>

@@ -68,19 +68,19 @@ export function MoreInfo() {
                         </Button>
                     </form>
                 </div></div>
-            <h1 className=" text-headerColor  ml-20  text-3xl font-bold text-emerald-950 font-mono  mb-9 ">Places to go and Things to do in AlUla:</h1>
+            <h1 className=" text-customColor flex text-3xl font-bold text-emerald-950 ml-40 mb-9 ">Places to go and Things to do in AlUla:</h1>
             <div className="products-section">
 
                 {data?.length === 0 && <p>No products found</p>}
                 {data?.map((product) => (
-                    <Card key={product.id} className="product-card">
+                    <Card key={product.id} className=" product-card">
                         <CardHeader>
-                            <CardTitle>{product.name}</CardTitle>
+                            <CardTitle className="text-customColor mb-5">{product.name}</CardTitle>
                             <img src={product.image} alt={product.name} />
-                            <CardDescription>{product.description}</CardDescription>
+                            <CardDescription className="text-textColor mb-5 mt-5">{product.description}</CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <p>Start From {product.price}</p>
+                            <p className="text-customColor mb-5">Start From {product.price}</p>
                         </CardContent>
 
                         <CardFooter className="flex gap-4">

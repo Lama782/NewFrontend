@@ -43,7 +43,7 @@ export function Login() {
 
         const token = await handleLogin()
         if (token) {
-
+            
             const decodedToken = jwt(token)
             const user = reshapeUser(decodedToken)
             localStorage.setItem("token", token)
@@ -55,8 +55,8 @@ export function Login() {
     return (
         <div className="min-h-screen">
             <div className="flex justify-center items-center ">
-                <h1 className="text-5xl font-bold text-emerald-950 font-mono text-headerColor mt-12">LOGIN</h1>
-            </div>
+  <h1 className="text-5xl font-bold text-emerald-950 font-mono text-headerColor">LOGIN</h1>
+</div>
             <form action="post" className="md:w-1/2 w-full mx-auto " onSubmit={handleSubmit}>
                 <Input name="email"
                     className="mt-4"
@@ -70,7 +70,7 @@ export function Login() {
                     onChange={handleChange}
                 />
                 <div className="flex justify-between flex-col">
-                    <Button className="bg-customColor text-button-foreground py-2 px-4 rounded-md cursor-pointer my-2 mx-auto mt-12">Login</Button>
+                    <Button className="bg-customColor text-button-foreground py-4 px-5 rounded-md cursor-pointer my-2">Login</Button>
                     <Link to="/signup">
                         <Button variant="link" className="mt-4">create an account</Button>
                     </Link>

@@ -38,9 +38,11 @@ console.log("user:",user)
         
     }
     return (
-        <div>
-            <h1>SIGNUP</h1>
-            <form action="POST" onSubmit ={handleSubmit}className="md:w-1/2 w-full mx-auto ">
+        <div className="min-h-screen">
+            <div className="flex justify-center items-center ">
+            <h1 className="text-5xl font-bold text-emerald-950 font-mono text-headerColor">SIGNUP</h1>
+            </div>
+            <form action="POST"  onSubmit ={handleSubmit}className="md:w-1/2 w-full mx-auto  ">
             <Input name="name"
                     className="mt-4"
                     type="text"
@@ -57,7 +59,7 @@ console.log("user:",user)
                     placeholder="Password"
                     onChange={handleChange}/>
                 <div className="flex justify-between flex-col">
-                    <Button>Signup</Button>
+                    <Button className="bg-customColor text-button-foreground py-4 px-5 rounded-md cursor-pointer my-2">Signup</Button>
                     <Link to="/login">
                         <Button variant="link" className="mt-4">Have an account already?</Button>
                     </Link>

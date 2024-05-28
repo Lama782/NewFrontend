@@ -1,4 +1,4 @@
-import jwt from "jwt-decode"
+
 import api from "@/api"
 import { Button } from "@/components/ui/button"
 import { EditDialog } from "@/components/ui/editDialog"
@@ -181,7 +181,6 @@ export function Dashboard() {
                                         <TableCell className="text-left font-bold text-textColor">{user.name}</TableCell>
                                         <TableCell className="text-left font-bold text-textColor">{user.email}</TableCell>
                                         <TableCell className="text-left font-bold text-textColor ">{user.role}</TableCell>
-
                                         <TableCell className="text-right">
                                             <Button className="bg-customColor" onClick={() => handleDeleteUser(user.email)}>
                                                 X

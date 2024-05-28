@@ -50,12 +50,8 @@ export function Checkout() {
                                 className="w-full"
                                 required
                             />
-
                             <div className="flex items-center space-x-4">
-
-
                                 <label>
-
                                     <label className="block text-lg font-semibold mb-2 text-headerColor">Payment Method:</label>
                                     <input
                                         type="radio"
@@ -63,10 +59,8 @@ export function Checkout() {
                                         value="bankTransfer"
                                         className="mr-2 text-textColor"
                                     />
-
                                     Transfer to the bank
                                 </label>
-
                             </div>
                             <label className="block text-lg font-semibold mb-2 text-headerColor">Upload your receipt:</label>
                             <Input
@@ -76,14 +70,12 @@ export function Checkout() {
                                 className="w-full"
                                 required
                             />
-
                             <Button type="submit" className="bg-customColor mt-4 text-button-foreground py-4 px-5 rounded-md cursor-pointer my-2">
                                 Place Order
                             </Button>
                         </form>
                     </CardContent>
                 </Card>
-
                 {isModalVisible && (
                     <div className="fixed inset-0 flex items-center justify-center bg-opacity-50">
                         <div className="bg-white p-8 rounded-md shadow-lg">

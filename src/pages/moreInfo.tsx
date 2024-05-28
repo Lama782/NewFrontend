@@ -68,7 +68,7 @@ export function MoreInfo() {
                         </Button>
                     </form>
                 </div></div>
-            <h1 className="details-title pl-40 font-bold">Places to go and Things to do in AlUla</h1>
+            <h1 className=" text-headerColor  ml-20  text-3xl font-bold text-emerald-950 font-mono  mb-9 ">Places to go and Things to do in AlUla:</h1>
             <div className="products-section">
 
                 {data?.length === 0 && <p>No products found</p>}
@@ -82,11 +82,14 @@ export function MoreInfo() {
                         <CardContent>
                             <p>Start From {product.price}</p>
                         </CardContent>
-                        <CardFooter>
+
+                        <CardFooter className="flex gap-4">
+                           
                             <Button className="bg-customColor text-button-foreground py-4 px-5 rounded-md cursor-pointer my-2" onClick={() => handleAddtoCart(product)}>Add to cart</Button>
                             <Button variant="outline" className="bg-customColor text-button-foreground py-4 px-5 rounded-md cursor-pointer my-2 w-full">
                                 <Link to={`/Product/${product.name}`}> Learn More </Link>
                             </Button>
+                            
                         </CardFooter>
                     </Card>
 

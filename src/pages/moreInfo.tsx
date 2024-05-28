@@ -68,7 +68,7 @@ export function MoreInfo() {
                         </Button>
                     </form>
                 </div></div>
-            <h1 className=" text-customColor flex text-3xl font-bold text-emerald-950 ml-40 mb-9 ">Places to go and Things to do in AlUla:</h1>
+            <h1 className="text-customColor flex text-3xl font-bold text-emerald-950 mb-9 text-center ">Places and Events in AlUla</h1>
             <div className="products-section">
 
                 {data?.length === 0 && <p>No products found</p>}

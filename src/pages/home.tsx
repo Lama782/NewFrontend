@@ -56,7 +56,7 @@ export function Home() {
             <div className="hero-section">
                 <div className="third-slide"></div>
                 <div className="hero-overlay">
-                    <h1 className="text-5xl  text-white font-sans font-bold ">Discover AlUla</h1>
+                    <h1 className="hero">Discover AlUla</h1>
                 </div>
             </div>
             <div className="second-section">
@@ -69,9 +69,11 @@ export function Home() {
                     </p>
                     <br />
                     <br />
-                    <Button className="bg-customColor text-button-foreground py-4 px-5 rounded-md cursor-pointer my-2 ">
-                        <Link to="/moreInfo" className="">Explore More</Link>
+                    <div className="flex justify-end">
+                    <Button className="bg-customColor text-button-foreground py-4 px-4 rounded-md cursor-pointer my-2 ">
+                        <Link to="/moreInfo" className=" bg-customColor text-button-foreground py-2 px-4 rounded-md cursor-pointer my-2">Explore More</Link>
                     </Button>
+                    </div>
                 </div>
                 <img
                     src="https://s7g10.scene7.com/is/image/rcu/elephant-rock-place-to-go-hero-01?$Responsive$&fit=stretch&fmt=webp&wid=1440"

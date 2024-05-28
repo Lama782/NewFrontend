@@ -6,6 +6,7 @@ import { NavBar } from "@/components/ui/navbar"
 import { Button } from "@/components/ui/button"
 import { GlobalContext } from "@/App"
 import { useContext } from "react"
+import Footer from "@/components/ui/footer"
 
 export function ProductDetails() {
 
@@ -62,6 +63,7 @@ export function ProductDetails() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     );
 }

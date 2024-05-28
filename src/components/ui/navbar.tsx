@@ -24,7 +24,7 @@ export function NavBar() {
   return (
     <div className="bg-gray-100/80 backdrop-blur-sm text-customColor font-bold py-4 px-6 flex justify-between items-center dark:bg-gray-800/80 dark:text-gray-200 mb-3">
       <div>
-      <img className="w-16 h-16" src="images/logo.png" />
+      <img className="w-16 h-16" src="images/logo1.png" />
       </div>
       <NavigationMenu >
         <NavigationMenuList className="flex gap-4">

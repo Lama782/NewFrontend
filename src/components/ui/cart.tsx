@@ -93,7 +93,7 @@ export function Cart() {
               );
             })}
             <p>Total: {total}</p>
-            <Button className="bg-customColor text-button-foreground py-4 px-5 rounded-md cursor-pointer my-2 font-mono">
+            <Button className="bg-customColor text-button-foreground py-4 px-5 rounded-md cursor-pointer my-2 font-mono  hover:bg-headerColor">
                         <Link to="/Checkout" className="">Checkout</Link>
                     </Button>
             {/* <Button onClick={handleCheckout}>Checkout</Button> */}

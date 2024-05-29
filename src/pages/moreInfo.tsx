@@ -129,8 +129,8 @@ export function MoreInfo() {
         </div>
       </div>
       <div className="flex justify-center items-center">
-        <h1 className="text-customColor flex text-3xl font-bold text-emerald-950 mb-9">
-          Places and Events in ALUla :
+        <h1 className="text-customColor flex text-5xl font-bold text-emerald-950 mb-9">
+          Places and Events in ALUla 
         </h1>
       </div>
       <div className="products-section flex justify-center flex-wrap">
@@ -150,7 +150,7 @@ export function MoreInfo() {
             </div>
             <div className="card-footer p-6 flex justify-between items-center">
               <Button
-                className="bg-customColor text-button-foreground py-4 px-5 rounded-md cursor-pointer my-2 flex items-center gap-2"
+                className="bg-customColor text-button-foreground py-4 px-5 rounded-md cursor-pointer my-2 flex items-center gap-2 hover:bg-headerColor"
                 onClick={() => handleAddtoCart(product)}
               >
                 <ShoppingCartIcon className="w-6 h-6" />

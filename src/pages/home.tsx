@@ -70,9 +70,9 @@ export function Home() {
                     </p>
                     <br />
                     <br />
-                    <div className="flex justify-end">
+                    <div className="flex justify-end mr-9">
                     <Button className="bg-customColor text-button-foreground py-4 px-4 rounded-md cursor-pointer my-2 ">
-                        <Link to="/moreInfo" className=" bg-customColor text-button-foreground py-2 px-4 rounded-md cursor-pointer my-2 ">Book now</Link>
+                        <Link to="/moreInfo" className=" bg-customColor text-button-foreground py-2 px-4  my-2 hover:bg-headerColor ">Book now</Link>
                     </Button>
                     </div>
                 </div>

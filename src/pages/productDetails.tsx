@@ -74,7 +74,7 @@ export function ProductDetails() {
 
 return (
     <>
-        <NavBar />
+        <NavBar/>
         <div className="container mx-auto p-4">
             <div className="flex flex-col md:flex-row md:space-x-8 items-start">
                 <div className="w-full md:w-1/2">

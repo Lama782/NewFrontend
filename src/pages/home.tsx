@@ -10,7 +10,8 @@ import "../App.css"; // Import the CSS file
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import Footer from "@/components/ui/footer";
+import { Footer } from "@/components/ui/footer";
+
 export function Home() {
     const [searchParams, setSearchParams] = useSearchParams();
     const defaultSearch = searchParams.get("searchBy") || "";
@@ -71,7 +72,7 @@ export function Home() {
                     <br />
                     <div className="flex justify-end">
                     <Button className="bg-customColor text-button-foreground py-4 px-4 rounded-md cursor-pointer my-2 ">
-                        <Link to="/moreInfo" className=" bg-customColor text-button-foreground py-2 px-4 rounded-md cursor-pointer my-2">Book now</Link>
+                        <Link to="/moreInfo" className=" bg-customColor text-button-foreground py-2 px-4 rounded-md cursor-pointer my-2 ">Book now</Link>
                     </Button>
                     </div>
                 </div>

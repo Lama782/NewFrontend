@@ -1,10 +1,12 @@
-import Footer from "@/components/ui/footer";
+import { Footer } from "@/components/ui/footer";
+
 
 export function Contact(){
 
 
 
     return(
+        <>
         <div>
 <p>
 Contact us
@@ -22,9 +24,12 @@ Outside KSA: +966 920025003
 
 
 
-<Footer/>
+
 
         </div>
+        <Footer/>
+        </>
        
     )
+    
 }

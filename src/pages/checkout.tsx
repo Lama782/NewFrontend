@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Footer from "@/components/ui/footer";
+import { Footer } from "@/components/ui/footer";
+
 import { Input } from "@/components/ui/input";
 import { NavBar } from "@/components/ui/navbar";
 import { FormEvent, useState } from "react";

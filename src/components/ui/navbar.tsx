@@ -65,6 +65,13 @@ export function NavBar() {
 
             <Link className="hover:text-headerColor" onClick={handleLogout} to={"/"}> Logout</Link>
           )}
+           <NavigationMenuItem className="flex space-x-4">
+            <Link to="/moreInfo">
+              <NavigationMenuLink className="hover:text-headerColor dark:hover:text-gray-400 block">
+                Products
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
       <Cart />

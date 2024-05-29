@@ -65,13 +65,13 @@ export function Home() {
                     <br />
                     <br />
                     <p className="font-sans text-xl text-textColor">
-                        Discover the hidden gems and breathtaking landscapes of AlUla. From the majestic Elephant Rock to the historic ruins of ancient civilizations, AlUla offers a unique blend of natural beauty and cultural heritage. Nestled in the heart of the Arabian Peninsula, AlUla is home to some of the most stunning and diverse landscapes in the world. Visitors can marvel at dramatic sandstone mountains, vast desert expanses, and lush oases. AlUlas rich history is evident in the ancient city of Hegra, Saudi Arabias first UNESCO World Heritage Site.
+                    Discover AlUla's hidden gems and breathtaking landscapes, from the majestic Elephant Rock to ancient ruins. Nestled in the Arabian Peninsula, AlUla boasts dramatic sandstone mountains, vast deserts, and lush oases. Explore the rich history at Hegra, Saudi Arabia's first UNESCO World Heritage Site. Our comprehensive platform supports AlUla tourism, offering detailed information on attractions, events, and activities, plus easy booking and ticket purchasing options.
                     </p>
                     <br />
                     <br />
                     <div className="flex justify-end">
                     <Button className="bg-customColor text-button-foreground py-4 px-4 rounded-md cursor-pointer my-2 ">
-                        <Link to="/moreInfo" className=" bg-customColor text-button-foreground py-2 px-4 rounded-md cursor-pointer my-2">Explore More</Link>
+                        <Link to="/moreInfo" className=" bg-customColor text-button-foreground py-2 px-4 rounded-md cursor-pointer my-2">Book now</Link>
                     </Button>
                     </div>
                 </div>
